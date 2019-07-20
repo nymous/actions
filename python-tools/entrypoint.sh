@@ -1,6 +1,6 @@
 #!/bin/sh -l
 
-set -euo pipefail
+set -eu
 
 if [ -f "pyproject.toml" ]; then
   echo "Installing dependencies with Poetry..."
