@@ -3,6 +3,11 @@ workflow "Test actions" {
   resolves = [ "Test python-tools" ]
 }
 
+action "Run Bandit" {
+  uses = "nymous/actions/python-tools@master"
+  args = "cd python-tools/tests && bandit -r ."
+}
+
 action "Run Black" {
   uses = "nymous/actions/python-tools@master"
   args = "cd python-tools/tests && black . --check"
@@ -11,11 +16,6 @@ action "Run Black" {
 action "Run Mypy" {
   uses = "nymous/actions/python-tools@master"
   args = "cd python-tools/tests && mypy ."
-}
-
-action "Run Bandit" {
-  uses = "nymous/actions/python-tools@master"
-  args = "cd python-tools/tests && bandit -r ."
 }
 
 action "Run Pylint" {
@@ -31,5 +31,5 @@ action "Run Pytest" {
 action "Test python-tools" {
   uses = "./"
   args = "true"
-  needs = ["Run Black", "Run Mypy", "Run Bandit", "Run Pylint"]
+  needs = ["Run Bandit", "Run Black", "Run Mypy", "Run Pylint", "Run Pytest"]
 }
