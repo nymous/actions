@@ -25,7 +25,7 @@ action "Run Pylint" {
 
 action "Run Pytest" {
   uses = "nymous/actions/python-tools@master"
-  args = "cd python-tools/tests && pytest"
+  args = "cd python-tools/tests && pip install -r requirements.txt && pytest"
 }
 
 action "Test python-tools" {
