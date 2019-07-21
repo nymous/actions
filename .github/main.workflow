@@ -15,7 +15,7 @@ action "Run Black" {
 
 action "Run Mypy" {
   uses = "nymous/actions/python-tools@master"
-  args = "cd python-tools && mypy tests"
+  args = "cd python-tools && mypy tests --config-file tests/mypy.ini"
 }
 
 action "Run Pylint" {
