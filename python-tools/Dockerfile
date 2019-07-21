@@ -15,9 +15,8 @@ RUN pip install --upgrade pip \
     black \
     mypy \
     pylint \
-    poetry \
     pipenv \
-  && poetry config settings.virtualenvs.create false
+    poetry
 
 COPY entrypoint.sh /entrypoint.sh
 

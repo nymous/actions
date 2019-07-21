@@ -4,6 +4,7 @@ set -eu
 
 if [ -f "pyproject.toml" ]; then
   echo "Installing dependencies with Poetry..."
+  poetry config settings.virtualenvs.create false
   poetry install
 elif [ -f "Pipfile" ]; then
   echo "Installing dependencies with Pipenv..."
