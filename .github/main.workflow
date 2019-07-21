@@ -29,7 +29,7 @@ action "Run Pytest" {
 }
 
 action "Test python-tools" {
-  uses = "./"
+  uses = "docker://alpine:latest"
   args = "true"
   needs = ["Run Bandit", "Run Black", "Run Mypy", "Run Pylint", "Run Pytest"]
 }
