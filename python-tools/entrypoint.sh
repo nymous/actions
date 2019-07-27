@@ -1,19 +1,24 @@
-#!/bin/sh -l
+#!/bin/bash -l
 
-set -eu
+set -euo pipefail
 
-if [ -f "pyproject.toml" ]; then
-  echo "Installing dependencies with Poetry..."
-  poetry config settings.virtualenvs.create false
-  poetry install
-elif [ -f "Pipfile" ]; then
-  echo "Installing dependencies with Pipenv..."
-  pipenv install --system
-elif [ -f "requirements.txt" ]; then
-  echo "Installing dependencies with pip..."
-  pip install -r requirements.txt
-else
-  echo "No dependencies detected"
+first_command=${1:-}
+
+if [[ -z "$first_command" ]]; then
+  echo "You didn't run a command"
+  exit 1
 fi
 
-sh -c "$*"
+if [[ -f "pyproject.toml" ]]; then
+  if [[ $first_command != "poetry" ]]; then
+    echo "Running while activating Poetry virtualenv..."
+    sh -c "poetry run $*"
+  fi
+elif [[ -f "Pipfile" ]]; then
+  if [[ $first_command != "pipenv" ]]; then
+    echo "Running while activating Poetry virtualenv..."
+    sh -c "pipenv run $*"
+  fi
+else
+  sh -c "$*"
+fi
