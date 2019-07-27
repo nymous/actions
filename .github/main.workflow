@@ -1,6 +1,6 @@
-workflow "Test actions" {
+workflow "Test Python tools" {
   on = "push"
-  resolves = [ "Test python-tools" ]
+  resolves = [ "Run Bandit", "Run Black", "Run Mypy", "Run Pylint", "Run Pytest" ]
 }
 
 action "Run Bandit" {
@@ -28,8 +28,3 @@ action "Run Pytest" {
   args = "cd python-tools/tests && pip install -r requirements.txt && pytest"
 }
 
-action "Test python-tools" {
-  uses = "docker://alpine:latest"
-  args = "true"
-  needs = ["Run Bandit", "Run Black", "Run Mypy", "Run Pylint", "Run Pytest"]
-}
