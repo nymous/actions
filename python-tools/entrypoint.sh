@@ -13,11 +13,15 @@ if [[ -f "pyproject.toml" ]]; then
   if [[ $first_command != "poetry" ]]; then
     echo "Running while activating Poetry virtualenv..."
     sh -c "poetry run $*"
+  else
+    sh -c "$*"
   fi
 elif [[ -f "Pipfile" ]]; then
   if [[ $first_command != "pipenv" ]]; then
     echo "Running while activating Poetry virtualenv..."
     sh -c "pipenv run $*"
+  else
+    sh -c "$*"
   fi
 else
   sh -c "$*"
