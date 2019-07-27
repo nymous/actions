@@ -4,7 +4,8 @@ A repository to hold all my [GitHub Actions](https://github.com/features/actions
 
 ## Usage
 
-Choose any action from the [list](#List-of-actions), and add it to you workflow like this:
+Choose any action from the [list](#List-of-actions), and add it to you workflow
+like this:
 
 ```workflow
 workflow "Run my action" {
@@ -29,3 +30,7 @@ I didn't search for Python actions before I started working on this one, but
 while debugging his action made me realize that the workspace is shared between
 all actions. Also my example workflow changed to look more like his, with an
 action to install dependencies before anything else.
+
+## License
+
+[MIT](./LICENSE)
