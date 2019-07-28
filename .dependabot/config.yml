@@ -3,3 +3,6 @@ update_configs:
   - package_manager: "docker"
     directory: "python-tools"
     update_schedule: "weekly"
+  - package_manager: "docker"
+    directory: "detect-secrets"
+    update_schedule: "weekly"

@@ -28,3 +28,12 @@ action "Run Pytest" {
   args = "cd python-tools/tests && pip install -r requirements.txt && pytest"
 }
 
+
+workflow "Test detect-secrets" {
+  on = "push"
+  resolves = [ "Run detect-secrets" ]
+}
+
+action "Run detect-secrets" {
+  uses = "./detect-secrets"
+}
