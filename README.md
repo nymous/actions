@@ -26,11 +26,7 @@ action "Nymous action" {
 
 ## Credits
 
-Credits to [abatilo/actions-poetry](https://github.com/abatilo/actions-poetry),
-I didn't search for Python actions before I started working on this one, but
-while debugging his action made me realize that the workspace is shared between
-all actions. Also my example workflow changed to look more like his, with an
-action to install dependencies before anything else.
+See each individual README for credits.
 
 ## License
 
