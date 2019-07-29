@@ -24,6 +24,10 @@ action "Nymous action" {
 * [Python tools](./python-tools): run commands with a Python environment. Usual tools such as Black, Mypy, Bandit, or Pylint are already installed.
 * [Detect secrets](./detect-secrets): scan a repository for secrets, optionally comparing with a baseline.
 
+## Projects using these actions
+
+[nymous/bookmarks_collection](https://github.com/nymous/bookmarks_collection/blob/master/.github/main.workflow)
+
 ## Credits
 
 See each individual README for credits.
