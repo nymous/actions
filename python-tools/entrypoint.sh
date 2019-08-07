@@ -2,6 +2,8 @@
 
 set -euo pipefail
 
+export PATH="/github/home/.local/bin:$PATH"
+
 first_command=${1:-}
 
 if [[ -z "$first_command" ]]; then
