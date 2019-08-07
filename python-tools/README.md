@@ -33,6 +33,9 @@ It automatically prefixes the command with a `poetry run` or a `pipenv run` if a
 dependency file is detected (`pyproject.toml` or `Pipfile`) and the first word
 isn't `poetry` or `pipenv` itself.
 
+:warning: Note: use `pip install --user` to install packages in user repository,
+which gets passed down to subsequent actions.
+
 ## Credits
 
 Credits to [abatilo/actions-poetry](https://github.com/abatilo/actions-poetry),
