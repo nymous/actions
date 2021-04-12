@@ -1,4 +1,4 @@
-FROM python:3.7
+FROM python:3.9.4
 
 LABEL "name"="Python"
 LABEL "maintainer"="Thomas Gaudin <thomas.gaudin@centraliens-lille.org>"
