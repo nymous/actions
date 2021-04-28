@@ -1,0 +1,26 @@
+version: 2
+updates:
+- package-ecosystem: docker
+  directory: "/python-tools"
+  schedule:
+    interval: weekly
+    time: "04:00"
+  open-pull-requests-limit: 10
+  ignore:
+  - dependency-name: python
+    versions:
+    - 3.9.1
+    - 3.9.2
+    - 3.9.3
+- package-ecosystem: docker
+  directory: "/detect-secrets"
+  schedule:
+    interval: weekly
+    time: "04:00"
+  open-pull-requests-limit: 10
+  ignore:
+  - dependency-name: python
+    versions:
+    - 3.9.1
+    - 3.9.2
+    - 3.9.3
